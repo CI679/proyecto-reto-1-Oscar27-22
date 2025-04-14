@@ -11,6 +11,7 @@ agileMethods=("SCRUM" "XP" "Kanban" "Crystal" "EXIT")
 traditionalMethods=("Cascade" "Spiral" "V Model" "EXIT")
 
 if [ "$1" == "-a" ]; then
+    echo "Welcome to the Agile methodologies fast guide, to continue please choose a theme:"
     select method in "${agileMethods[@]}"; do
         case $REPLY in
             1|2|3|4)
@@ -30,6 +31,7 @@ if [ "$1" == "-a" ]; then
 fi
 
 if [ "$1" == "-t" ]; then
+    echo "Welcome to the traditional methodologies fast guide, to continue please choose a theme:"
     select method in "${traditionalMethods[@]}"; do
         case $REPLY in
             1|2|3)
