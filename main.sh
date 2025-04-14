@@ -28,3 +28,21 @@ if [ "$1" == "-a" ]; then
         esac
     done
 fi
+
+if [ "$1" == "-t" ]; then
+    select method in "${traditionalMethods[@]}"; do
+        case $REPLY in
+            1|2|3)
+                echo "Youd choose ${method}"
+                ;;
+            4)
+                echo "Thank you for seeing Trad methods"
+                echo "Bye"
+                ;;
+            *)
+                echo "That's not a valid option"
+                echo "Please try again"
+                ;;
+        esac
+    done
+fi
