@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$1" != "-a" ] && [ "$1" != "-t" ]; then
+if [[ "$1" != "-a"  &&  "$1" != "-t" ]]; then
     echo "To use the program $0 you must give the following flags:"
     echo "-a for agile"
     echo "-t for traditional"
@@ -56,7 +56,7 @@ submenu(){
 
 agileMethods=("SCRUM" "XP" "Kanban" "Crystal" "EXIT")
 traditionalMethods=("Cascade" "Spiral" "V Model" "EXIT")
-if [ "$1" == "-a" ]; then
+if [[ "$1" == "-a" ]]; then
     echo "Welcome to the Agile methodologies fast guide, to continue please choose a theme:"
     select method in "${agileMethods[@]}"; do
         case $REPLY in
@@ -79,7 +79,7 @@ if [ "$1" == "-a" ]; then
     done
 fi
 
-if [ "$1" == "-t" ]; then
+if [[ "$1" == "-t" ]]; then
     echo "Welcome to the traditional methodologies fast guide, to continue please choose a theme:"
     select method in "${traditionalMethods[@]}"; do
         case $REPLY in
