@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+source parse_line
+
+function search_info {
+  script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+  dir="$script_dir"/methods
+
+  rawMethod=$2
+  method="${rawMethod,,}" # lowercase method string (ensure consistency)
+  file="$dir"/"$method".inf
+  pattern=$1
+
+  matches=$(grep -E "\[$pattern\]" "$file") # format: [concept]
+
+  if [[ -z "$matches" ]]; then
+    echo "No resulting matches"
+    return
+  fi
+
+  echo "Matches found:"
+  echo
+
+  while IFS= read -r line; do
+    parse_line "$line"
+    echo "   $concept"
+    echo "   $definition"
+    echo
+  done <<< "$matches"
+}

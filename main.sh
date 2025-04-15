@@ -2,6 +2,7 @@
 
 source bootstrap
 source add_info
+source search_info
 
 if [[ "$1" != "-a"  &&  "$1" != "-t" ]]; then
     echo "To use the program $0 you must give the following flags:"
@@ -26,8 +27,9 @@ submenu(){
                 ;;
             2)
                 echo "Search info in ${method}"
-                read -p "Enter the identifier to search: " searchID
-                echo "Searching ${searchID}"
+                read -p "Enter a pattern to search: " pattern
+                echo "Searching '${pattern}'..."
+                search_info "$pattern" "$method"
                 ;;
             3)
                 echo "Delete concept in ${method}"

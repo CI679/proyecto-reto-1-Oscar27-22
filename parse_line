@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+parse_line() {
+  line="$1"
+
+  # we do a little of black magic, also called Bash string manipulation
+  definition="${line#*.- }" # find last ".- "
+
+  concept="${line%]*}" # find first "]"
+  concept="${concept#[}" # find last "["
+}
