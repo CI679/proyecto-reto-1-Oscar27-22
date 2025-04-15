@@ -1,17 +1,14 @@
 #!/usr/bin/env bash
 
 add_info() {
-  # TODO: maybe pass this value as an argument?
-  script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-  dir="$script_dir"/methods
-  concept=$1
-  definition=$2
-  rawMethod=$3
-  method="${rawMethod,,}" # lowercase method string (ensure consistency)
+  local concept=$1
+  local definition=$2
+  local method=$3
+  local dir=$4
 
   echo "[$concept] .- $definition " >> "$dir"/"$method".inf &&\
-  echo "Entry correctly added:" &&\
-  echo "Method: $rawMethod" &&\
+  echo "Entry added:" && echo &&\
+  echo "Method: $method" &&\
   echo "Concept: $concept" &&\
   echo "Definition: $definition"
 }

@@ -15,21 +15,23 @@ bootstrap
 
 submenu(){
     local method=$1
-    echo "You are in the ${method} section, please select an option:"
+    local method_arg=${method,,} # lowercase method string (ensure consistency)
     options=("Add Information" "Search" "Delete Information" "Read base of information" "Go back to main menu" "Exit app")
+
+    echo "You are in the ${method} section, please select an option:"
     select option in "${options[@]}"; do
         case $REPLY in
             1)
                 echo "Add info to ${method}"
                 read -p "Enter a concept: " concept
                 read -p "Enter the definition: " definition
-                add_info "$concept" "$definition" "$method"
+                add_info "$concept" "$definition" "$method_arg" "$dir"
                 ;;
             2)
                 echo "Search info in ${method}"
                 read -p "Enter a pattern to search: " pattern
                 echo "Searching '${pattern}'..."
-                search_info "$pattern" "$method"
+                search_info "$pattern" "$method_arg" "$dir"
                 ;;
             3)
                 echo "Delete concept in ${method}"
