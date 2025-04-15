@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+bootstrap() {
+  dir=$(pwd)
+  files=("$dir/agile.inf" "$dir/traditional.inf")
+  create=()
+  for file in "${files[@]}"; do
+    [[ ! -f "$file" ]] && create+=("$file")
+  done
+
+  [[ ${#create[@]} -eq 0 ]] && return
+
+  echo "The following files were created for the execution of the program:"
+  for file in "${create[@]}"; do
+    [[ ! -f "$file" ]] && touch "$file" && echo "- Created: $file"
+  done
+  echo -e "\nTo continue please Press ENTER"
+  read
+}
