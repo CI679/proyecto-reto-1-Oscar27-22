@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source bootstrap
+
 if [[ "$1" != "-a"  &&  "$1" != "-t" ]]; then
     echo "To use the program $0 you must give the following flags:"
     echo "-a for agile"
@@ -12,7 +13,7 @@ bootstrap
 
 submenu(){
     local method=$1
-    echo "You are in ${method} section, please select an option:"
+    echo "You are in the ${method} section, please select an option:"
     options=("Add Information" "Search" "Delete Information" "Read base of information" "Go back to main menu" "Exit app")
     select option in "${options[@]}"; do
         case $REPLY in
@@ -21,16 +22,16 @@ submenu(){
                 read -p "Enter an identifier: " identifier
                 read -p "Enter the concept: " concept
                 echo "identifier: ${identifier}"
-                echo "concept: ${concept}" 
+                echo "concept: ${concept}"
                 ;;
-            2) 
+            2)
                 echo "Search info in ${method}"
                 read -p "Enter the identifier to search: " searchID
                 echo "Searching ${searchID}"
                 ;;
             3)
                 echo "Delete concept in ${method}"
-                read -p "Enter the identifier to delet: " deleteID
+                read -p "Enter the identifier to delete: " deleteID
                 echo "Searching ${deleteID}"
                 ;;
             4)
@@ -45,7 +46,7 @@ submenu(){
                 echo "Have a good day"
                 exit 0
                 ;;
-            *) 
+            *)
                 echo "Invalid option"
                 ;;
         esac
@@ -59,6 +60,7 @@ submenu(){
 
 agileMethods=("SCRUM" "XP" "Kanban" "Crystal" "EXIT")
 traditionalMethods=("Cascade" "Spiral" "V Model" "EXIT")
+
 if [[ "$1" == "-a" ]]; then
     echo "Welcome to the Agile methodologies fast guide, to continue please choose a theme:"
     select method in "${agileMethods[@]}"; do
