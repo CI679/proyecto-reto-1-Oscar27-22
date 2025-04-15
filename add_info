@@ -2,8 +2,8 @@
 
 add_info() {
   cwd=$(pwd)
-	concept=$1
-	definition=$2
+  concept=$1
+  definition=$2
   rawMethod=$3
   method="${rawMethod,,}"
 
