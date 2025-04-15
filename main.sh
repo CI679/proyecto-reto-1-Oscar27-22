@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source bootstrap
+source add_info
 
 if [[ "$1" != "-a"  &&  "$1" != "-t" ]]; then
     echo "To use the program $0 you must give the following flags:"
@@ -19,10 +20,11 @@ submenu(){
         case $REPLY in
             1)
                 echo "Add info to ${method}"
-                read -p "Enter an identifier: " identifier
-                read -p "Enter the concept: " concept
-                echo "identifier: ${identifier}"
+                read -p "Enter a concept: " concept
+                read -p "Enter the definition: " definition
                 echo "concept: ${concept}"
+                echo "definition: ${definition}"
+                add_info "$concept" "$definition" "$method"
                 ;;
             2)
                 echo "Search info in ${method}"

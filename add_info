@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+add_info() {
+  cwd=$(pwd)
+	concept=$1
+	definition=$2
+  rawMethod=$3
+  method="${rawMethod,,}"
+
+  echo -n "[$concept] .- $definition " >> "$cwd"/"$method".inf
+}
