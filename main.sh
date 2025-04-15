@@ -61,7 +61,7 @@ submenu(){
 }
 
 agileMethods=("SCRUM" "XP" "Kanban" "Crystal" "EXIT")
-traditionalMethods=("Cascade" "Spiral" "V Model" "EXIT")
+traditionalMethods=("Cascade" "Spiral" "V_Model" "EXIT")
 
 if [[ "$1" == "-a" ]]; then
     echo "Welcome to the Agile methodologies fast guide, to continue please choose a theme:"

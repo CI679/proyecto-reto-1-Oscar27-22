@@ -2,7 +2,7 @@
 
 bootstrap() {
   dir=$(pwd)
-  files=("$dir/agile.inf" "$dir/traditional.inf")
+  files=("$dir/scrum.inf" "$dir/xp.inf" "$dir/kanban.inf" "$dir/kanban.inf" "$dir/crystal.inf" "$dir/cascade.inf" "$dir/spiral.inf" "$dir/v_model.inf")
   create=()
   for file in "${files[@]}"; do
     [[ ! -f "$file" ]] && create+=("$file")
