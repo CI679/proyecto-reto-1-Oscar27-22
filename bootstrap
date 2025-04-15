@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
 bootstrap() {
-  dir=$(pwd)
+  script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+  dir="$script_dir"/methods
+  [[ ! -d "$dir" ]] && mkdir -p "$dir"
+
   files=("$dir/scrum.inf" "$dir/xp.inf" "$dir/kanban.inf" "$dir/kanban.inf" "$dir/crystal.inf" "$dir/cascade.inf" "$dir/spiral.inf" "$dir/v_model.inf")
   create=()
   for file in "${files[@]}"; do
