@@ -22,8 +22,6 @@ submenu(){
                 echo "Add info to ${method}"
                 read -p "Enter a concept: " concept
                 read -p "Enter the definition: " definition
-                echo "concept: ${concept}"
-                echo "definition: ${definition}"
                 add_info "$concept" "$definition" "$method"
                 ;;
             2)
