@@ -21,7 +21,6 @@ function search_info {
   while IFS= read -r line; do
     parse_line "$line"
     echo "   $concept"
-    echo "   $definition"
-    echo
+    echo "   $definition"; echo
   done <<< "$matches"
 }

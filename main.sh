@@ -4,6 +4,7 @@ source bootstrap
 source add_info
 source search_info
 source delete_info
+source content_info
 
 if [[ "$1" != "-a"  &&  "$1" != "-t" ]]; then
     echo "To use the program $0 you must give the following flags:"
@@ -42,6 +43,7 @@ submenu(){
                 ;;
             4)
                 echo "Contents in ${method}:"; echo
+                content_info "$method_arg" "$dir"
                 ;;
             5)
                 echo "Back to main menu"
