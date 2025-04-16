@@ -3,6 +3,7 @@
 source bootstrap
 source add_info
 source search_info
+source delete_info
 
 if [[ "$1" != "-a"  &&  "$1" != "-t" ]]; then
     echo "To use the program $0 you must give the following flags:"
@@ -34,9 +35,9 @@ submenu(){
                 search_info "$pattern" "$method_arg" "$dir"
                 ;;
             3)
-                echo "Delete concept in ${method}"
-                read -p "Enter the identifier to delete: " deleteID
-                echo "Searching ${deleteID}"
+                read -p "Enter the identifier to delete: " pattern
+                echo "Searching ${pattern}..."
+                delete_info "$pattern" "$method_arg" "$dir"
                 ;;
             4)
                 echo "read base of info in ${method}"
