@@ -23,24 +23,25 @@ submenu(){
     select option in "${options[@]}"; do
         case $REPLY in
             1)
-                echo "Add info to ${method}"
+                echo "Add info to ${method}"; echo
                 read -p "Enter a concept: " concept
                 read -p "Enter the definition: " definition
                 add_info "$concept" "$definition" "$method_arg" "$dir"
                 ;;
             2)
-                echo "Search info in ${method}"
+                echo "Search info in ${method}"; echo
                 read -p "Enter a pattern to search: " pattern
                 echo "Searching '${pattern}'..."
                 search_info "$pattern" "$method_arg" "$dir"
                 ;;
             3)
+                echo "Delete concept in ${method}"; echo
                 read -p "Enter the identifier to delete: " pattern
                 echo "Searching ${pattern}..."
                 delete_info "$pattern" "$method_arg" "$dir"
                 ;;
             4)
-                echo "read base of info in ${method}"
+                echo "Contents in ${method}:"; echo
                 ;;
             5)
                 echo "Back to main menu"
@@ -55,12 +56,9 @@ submenu(){
                 echo "Invalid option"
                 ;;
         esac
-        echo -e "\nPress Enter to continue"
-        read
-        echo ""
+        echo -e "\nPress Enter to continue\n"; read
         echo "You are in ${method} section, please select an option:"
     done
-
 }
 
 agileMethods=("SCRUM" "XP" "Kanban" "Crystal" "EXIT")
