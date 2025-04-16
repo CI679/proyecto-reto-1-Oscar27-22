@@ -1,10 +1,96 @@
 #!/bin/bash
 
-source bootstrap
-source add_info
-source search_info
-source delete_info
-source content_info
+parse_line() {
+  local line="$1"
+
+  # we do a little of black magic, also called Bash string manipulation
+  definition="${line#*.- }" # find last ".- "
+
+  concept="${line%]*}" # find first "]"
+  concept="${concept#[}" # find last "["
+}
+
+bootstrap() {
+  script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+  dir="$script_dir"/methods
+  [[ ! -d "$dir" ]] && mkdir -p "$dir"
+
+  files=("$dir/scrum.inf" "$dir/xp.inf" "$dir/kanban.inf" "$dir/kanban.inf" "$dir/crystal.inf" "$dir/cascade.inf" "$dir/spiral.inf" "$dir/v_model.inf")
+  create=()
+  for file in "${files[@]}"; do
+    [[ ! -f "$file" ]] && create+=("$file")
+  done
+
+  [[ ${#create[@]} -eq 0 ]] && return
+
+  echo "The following files were created for the execution of the program:"
+  for file in "${create[@]}"; do
+    [[ ! -f "$file" ]] && touch "$file" && echo "- Created: $file"
+  done
+  echo -e "\nTo continue please Press ENTER"
+  read
+}
+
+add_info() {
+  local concept=$1
+  local definition=$2
+  local method=$3
+  local dir=$4
+
+  echo "[$concept] .- $definition " >> "$dir"/"$method".inf &&\
+  echo "Entry added:" && echo &&\
+  echo "Method: $method" &&\
+  echo "Concept: $concept" &&\
+  echo "Definition: $definition"
+}
+
+search_info() {
+  local pattern=$1
+  local method=$2
+  local dir=$3
+  local file="$dir"/"$method".inf
+
+  matches=$(grep -E "\[$pattern\]" "$file") # format: [concept]
+
+  if [[ -z "$matches" ]]; then
+    echo "No resulting matches"
+    return
+  fi
+
+  echo "Matches found:"
+  echo
+
+  while IFS= read -r line; do
+    parse_line "$line"
+    echo "   $concept"
+    echo "   $definition"; echo
+  done <<< "$matches"
+}
+
+delete_info() {
+  local pattern=$1
+  local method=$2
+  local dir=$3
+  local file="$dir"/"$method".inf
+
+  result=$(search_info "$pattern" "$method" "$dir")
+  [[ "$result" == "No resulting matches" ]] && echo "No resulting matches" && return
+
+  sed -i "/\[$pattern\] .- /d" "$file"
+  echo "$pattern deleted"
+}
+
+content_info() {
+  local method=$1
+  local dir=$2
+  local file="$dir"/"$method".inf
+
+  while IFS= read -r line; do
+    parse_line "$line"
+    echo "Concept:   $concept"
+    echo "Definition $definition"; echo
+  done < "$file"
+}
 
 if [[ "$1" != "-a"  &&  "$1" != "-t" ]]; then
     echo "To use the program $0 you must give the following flags:"
