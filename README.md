@@ -16,7 +16,8 @@ Sigue estos pasos para clonar el repositorio, construir la imagen Docker y proba
 
 1. **Clona** este repositorio:
    ```bash
-   git clone https://github.com/tu_usuario/guia-metodologias.git
+   git clone https://github.com/Oscar27-22/bash-temp.git ó usa la sshkey:
+   git clone
    cd guia-metodologias
 
 ## Running the tests
