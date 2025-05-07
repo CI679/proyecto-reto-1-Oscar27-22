@@ -16,10 +16,10 @@ Sigue estos pasos para clonar el repositorio, construir la imagen Docker y proba
 
 1. **Clona** este repositorio:
    ```bash
-   git clone https://github.com/Oscar27-22/bash-temp.git ó usa la sshkey:
-   git clone
+   git clone https://github.com/Oscar27-22/bash-temp.git
+   ó usa la sshkey: git@github.com:Oscar27-22/bash-temp.git
    cd guia-metodologias
-
+   
 ## Running the tests
 
 Explain how to run the automated tests for this system
@@ -42,11 +42,25 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Login en Docker Hub:
+```
+   docker login
+```   
+Push de la imagen:
+```
+   docker push emilianopime/metodo:1.0
+```
+Ejecucion del contenedor:
+   para ejecutar correctamente este contenedor, tenemos que colocar el parametro que queramos usar,  
+   si es para metodologias agiles es -a, si es para tradicionales es -t
+```
+   docker run --rm -it emilianopime/metodo:1.0 -(parametro)
+```
+
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [Alpine](https://alpinelinux.org/) - The web framework used
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
