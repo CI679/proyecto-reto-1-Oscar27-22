@@ -60,9 +60,9 @@ Ejecucion del contenedor:
 
 ## Built With
 
-* [Alpine](https://alpinelinux.org/) - El sistema que utilizamos
+* [Alpine](https://alpinelinux.org/) - El sistema base que utilizamos
 * [Bash](https://www.gnu.org/software/bash/) - Lenguaje del script
-* [Docker](https://www.docker.com/) - Used to generate RSS Feeds
+* [Docker](https://www.docker.com/) - Contenedor
 
 ## Contributing
 
