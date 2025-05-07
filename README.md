@@ -1,36 +1,23 @@
-# Project Title
+# Guía Rápida de Metodologías (Proyecto del primer parcial)
 
-One Paragraph of project description goes here
+Este proyecto es un pequeño script en Bash, empaquetado en Docker, que permite consultar de forma interactiva conceptos y definiciones de metodologías de desarrollo **ágiles** y **tradicionales**. Está pensado como entrega del primer parcial de la materia **“Desarrollo basado en plataformas”**.
 
-## Getting Started
+## Iniciar
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Sigue estos pasos para clonar el repositorio, construir la imagen Docker y probar la aplicación en tu máquina local.
 
-### Prerequisites
+### Pre-requisitos
 
-What things you need to install the software and how to install them
+- **Docker** (versión 20.10 o superior) instalado y en ejecución  
+- **Git** para clonar el repositorio  
+- Un entorno Unix‑like con **Bash** disponible (Linux, macOS, WSL)
 
-```
-Give examples
-```
+### Instalacion
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+1. **Clona** este repositorio:
+   ```bash
+   git clone https://github.com/tu_usuario/guia-metodologias.git
+   cd guia-metodologias
 
 ## Running the tests
 
