@@ -60,9 +60,9 @@ Ejecucion del contenedor:
 
 ## Built With
 
-* [Alpine](https://alpinelinux.org/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Alpine](https://alpinelinux.org/) - El sistema que utilizamos
+* [Bash](https://www.gnu.org/software/bash/) - Lenguaje del script
+* [Docker](https://www.docker.com/) - Used to generate RSS Feeds
 
 ## Contributing
 
