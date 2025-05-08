@@ -1,11 +1,10 @@
 FROM alpine:latest 
+WORKDIR /app
+COPY main.sh .
+RUN chmod +x main.sh
 
 RUN apk add --no-cache bash
 
-WORKDIR /app
+ENV method="-a"
 
-COPY main.sh .
-
-RUN chmod +x main.sh
-
-CMD ["./main.sh"]
+CMD ["bash", "-c", "./main.sh ${method"]
