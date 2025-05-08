@@ -185,6 +185,7 @@ if [[ "$1" == "-t" ]]; then
             4)
                 echo "Thank you for seeing Trad methods"
                 echo "Bye"
+                exit 0
                 ;;
             *)
                 echo "That's not a valid option"
