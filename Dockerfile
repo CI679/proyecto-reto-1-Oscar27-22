@@ -8,6 +8,8 @@ RUN chmod +x main.sh
 
 RUN apk add --no-cache bash
 
-ENV method="-a"  
+# The default value of method
+ENV method="-a"
 
-CMD bash -c "./main.sh ${method}"
+# Execute main.sh with the value of $method in the exec-time
+CMD ["bash", "-c", "./main.sh \"$method\""]
