@@ -8,9 +8,9 @@ Sigue estos pasos para clonar el repositorio, construir la imagen de Docker y pr
 
 ### Pre-requisitos
 
-* [**Docker**](https://docs.docker.com/engine/install/) (versión 20.10 o superior) instalado y en ejecución
-* **Git** para clonar el repositorio
-* Un entorno Unix-like con **Bash**, **Zsh** (o similar) disponible (Linux, macOS, WSL)
+* [**Docker**](https://docs.docker.com/engine/install/) (versión 20.10 o superior) instalado y en ejecución.
+* **Git** para clonar el repositorio.
+* Un entorno Unix-like con **Bash**, **Zsh** (o similar) disponible (Linux, macOS, WSL).
 
 ### Instalación
 
@@ -70,11 +70,11 @@ Este proyecto sigue una estructura de Bash procedural con toques de modularidad 
 
 ### Reglas Básicas
 
-* **Indentación:** 2 espacios (no tabs)
-* **Nombres:** `snake_case` para variables y funciones
-* **Variables:** Siempre locales dentro de funciones y entre comillas (`"$var"`)
-* **Comparaciones:** Se prefiere `[[ ]]` en vez de `[ ]`
-* **Funciones:** Máximo 30 líneas (dividir si es necesario)
+* **Indentación:** 2 espacios (no tabs).
+* **Nombres:** `snake_case` para variables y funciones.
+* **Variables:** Siempre locales dentro de funciones y entre comillas (`"$var"`).
+* **Comparaciones:** Se prefiere `[[ ]]` en vez de `[ ]`.
+* **Funciones:** Máximo 30 líneas (dividir si es necesario).
 
 ### Ejemplo
 
@@ -109,9 +109,9 @@ docker run -it -e method="-t" emilianopime/metodo:latest
 
 ## Tecnologías Utilizadas
 
-* [Bash](https://www.gnu.org/software/bash/) – Lenguaje del script
-* [Docker](https://www.docker.com/) – Contenedor
-* [Alpine](https://alpinelinux.org/) – Sistema base para el contenedor
+* [Bash](https://www.gnu.org/software/bash/) – Lenguaje del script.
+* [Docker](https://www.docker.com/) – Contenedor.
+* [Alpine](https://alpinelinux.org/) – Sistema base para el contenedor.
 
 ## Contribuciones
 
@@ -119,7 +119,7 @@ Este es un proyecto académico, por lo cual no se aceptan contribuciones externa
 
 ## Versionado
 
-**V1.0.0** – Versión inicial del proyecto
+**V1.0.0** – Versión inicial del proyecto.
 
 ## Colaboradores
 
@@ -134,6 +134,6 @@ Este proyecto no cuenta con ninguna licencia específica.
 
 ## Reconocimientos
 
-* **Profesor Luis Antonio Ramírez Martínez**
-* **Brian Fox** (Creador de Bash)
+* **Profesor Luis Antonio Ramírez Martínez**.
+* **Brian Fox** (Creador de Bash).
 
